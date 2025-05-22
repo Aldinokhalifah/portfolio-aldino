@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Database, Code2, Server, Layout, Layers, FileCode, Cpu, Coffee } from "lucide-react"
-// import { Badge } from "@/components/ui/Badge"
 
 const skills = [
     {
@@ -80,7 +79,7 @@ export default function Skills() {
             >
             <h2 className="text-3xl font-bold mb-2">My Skills</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6"></div>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-white/40">
                 A comprehensive overview of my technical expertise and proficiency levels.
             </p>
             </motion.div>
@@ -105,7 +104,7 @@ export default function Skills() {
 
                 <div className="space-y-4">
                     {skillGroup.items.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="flex items-center justify-center">
+                    <div key={skillIndex} className="flex items-center justify-start">
                         <span className="text-sm font-medium">{skill.name}</span>
                     </div>
                     ))}

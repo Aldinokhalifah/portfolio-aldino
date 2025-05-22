@@ -10,6 +10,11 @@ interface CardContentProps extends HTMLAttributes<HTMLDivElement> {
     className?: string
 }
 
+interface CardFooterProps extends HTMLAttributes<HTMLDivElement> {
+    children: ReactNode
+    className?: string
+}
+
 export function Card({ className = '', children, ...props }: CardProps) {
     return (
         <div className={`rounded-lg ${className}`} {...props}>
@@ -19,6 +24,14 @@ export function Card({ className = '', children, ...props }: CardProps) {
 }
 
 export function CardContent({ className = '', children, ...props }: CardContentProps) {
+    return (
+        <div className={`${className}`} {...props}>
+            {children}
+        </div>
+    )
+}
+
+export function CardFooter({ className = '', children, ...props }: CardFooterProps) {
     return (
         <div className={`${className}`} {...props}>
             {children}

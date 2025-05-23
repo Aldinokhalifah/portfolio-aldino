@@ -7,6 +7,12 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function Hero() {
+
+    const handleEmail = () => {
+        const link = "https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTNpzqqDLLCHZJpxzZTrWxpMkkTdgbmzgvHlsGdvFBDcQPPSmkkQGCflhtgTqGRCBTHnwL";
+        window.location.href = link;
+    }
+
     return (
         <>
             <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-background to-background/90">
@@ -29,7 +35,7 @@ export default function Hero() {
                     transition={{ delay: 0.2, duration: 0.5 }}
                     >
                     <Image
-                        src="/placeholder.svg?height=150&width=150"
+                        src="/images/logo.png"
                         alt="Aldino Khalifah"
                         width={150}
                         height={150}
@@ -78,7 +84,7 @@ export default function Hero() {
                     >
                         View Projects
                     </Button>
-                    <Button size="md" variant="outline" className="hover:bg-white/10 font-semibold">
+                    <Button size="md" variant="outline" onClick={handleEmail} className="hover:bg-white/10 font-semibold">
                         Contact Me
                     </Button>
                     </motion.div>

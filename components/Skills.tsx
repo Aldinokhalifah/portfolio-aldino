@@ -1,50 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Database, Code2, Server, Layout, Layers, FileCode, Cpu, Coffee } from "lucide-react"
-
-const skills = [
-    {
-        category: "Frontend",
-        icon: <Layout className="h-6 w-6" />,
-        items: [
-        { name: "JavaScript" },
-        { name: "Next.js" },
-        { name: "Tailwind CSS" },
-        { name: "Bootstrap" },
-        { name: "React" },
-        ],
-    },
-    {
-        category: "Backend",
-        icon: <Server className="h-6 w-6" />,
-        items: [
-        { name: "Laravel" },
-        { name: "Node.js" },
-        { name: "Express.js" },
-        { name: "PHP" },
-        { name: "Java" },
-        ],
-    },
-    {
-        category: "Languages",
-        icon: <Code2 className="h-6 w-6" />,
-        items: [
-        { name: "JavaScript" },
-        { name: "Python" },
-        { name: "PHP" },
-        { name: "Java" },
-        ],
-    },
-    {
-        category: "Database",
-        icon: <Database className="h-6 w-6" />,
-        items: [
-        { name: "MySQL", level: "Advanced" },
-        { name: "MongoDB", level: "Advanced" },
-        ],
-    },
-]
+import { Layers, FileCode, Cpu, Coffee } from "lucide-react"
+import { skills } from "@/app/utils/skills"
 
 export default function Skills() {
     const container = {

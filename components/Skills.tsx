@@ -95,7 +95,7 @@ export default function Skills() {
                 <motion.div
                 key={index}
                 variants={item}
-                className="bg-card/30 backdrop-blur-sm border border-white/20 rounded-lg p-6"
+                className="bg-card/30 backdrop-blur-sm border border-white/10 rounded-lg p-6"
                 >
                 <div className="flex items-center gap-3 mb-6">
                     <div className="p-2 rounded-md bg-white/10 text-primary">{skillGroup.icon}</div>

@@ -94,7 +94,7 @@ export default function Projects() {
                 >
                 {projects.map((project, index) => (
                     <motion.div key={index} variants={item}>
-                    <Card className="overflow-hidden border border-white/20 bg-card/30 backdrop-blur-sm h-full flex flex-col">
+                    <Card className="overflow-hidden border border-white/10 bg-card/30 backdrop-blur-sm h-full flex flex-col">
                         <div className="overflow-hidden aspect-auto">
                             <motion.img
                                 src={project.image}

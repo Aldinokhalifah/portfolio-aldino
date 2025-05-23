@@ -28,7 +28,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
             >
-                <Card className="border border-white/15 bg-card/10 backdrop-blur-sm overflow-hidden">
+                <Card className="border border-white/10 bg-card/10 backdrop-blur-sm overflow-hidden">
                 <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Who I Am</h3>
                     <p className="text-muted-foreground text-pretty mb-4 text-white/40">
@@ -41,7 +41,6 @@ export default function About() {
                             I have skills in various technologies, such as Laravel, Next.js, Node js, Express js, Python, JavaScript, Tailwind CSS, Bootstrap, PHP, database, and Java. With this combination of skills, I am constantly honing my ability to build efficient and innovative solutions in the field of software development.
                             I am always open to learning new things and interested in collaborating on challenging projects, especially in the field of backend development and software engineering.
                         </p>
-                        Contact me to discuss further or share your technology insights!
                     </div>
                 </CardContent>
                 </Card>
@@ -54,28 +53,28 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="grid grid-cols-2 gap-4"
             >
-                <Card className="border border-white/15 bg-card/10 backdrop-blur-sm">
+                <Card className="border border-white/10 bg-card/10 backdrop-blur-sm">
                 <CardContent className="p-6">
                     <h3 className="text-lg font-semibold mb-2">Education</h3>
                     <p className="text-muted-foreground text-white/40">Bachelor&apos;s Degree in Computer Science</p>
                 </CardContent>
                 </Card>
 
-                <Card className="border border-white/15 bg-card/10 backdrop-blur-sm">
+                <Card className="border border-white/10 bg-card/10 backdrop-blur-sm">
                 <CardContent className="p-6">
                     <h3 className="text-lg font-semibold mb-2">Experience</h3>
                     <p className="text-muted-foreground text-white/40">{new Date().getFullYear() - 2023} years in web development</p>
                 </CardContent>
                 </Card>
 
-                <Card className="border border-white/15 bg-card/10 backdrop-blur-sm">
+                <Card className="border border-white/10 bg-card/10 backdrop-blur-sm">
                 <CardContent className="p-6">
                     <h3 className="text-lg font-semibold mb-2">Interests</h3>
                     <p className="text-muted-foreground text-white/40">Web Development, Backend Systems, Software Engineering</p>
                 </CardContent>
                 </Card>
 
-                <Card className="border border-white/15 bg-card/10 backdrop-blur-sm">
+                <Card className="border border-white/10 bg-card/10 backdrop-blur-sm">
                 <CardContent className="p-6">
                     <h3 className="text-lg font-semibold mb-2">Location</h3>
                     <p className="text-muted-foreground text-white/40">Available for remote work worldwide</p>

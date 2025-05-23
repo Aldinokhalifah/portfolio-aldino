@@ -1,4 +1,5 @@
 import { Database, Code2, Server, Layout } from "lucide-react"
+import { ReactElement } from "react";
 
 interface SkillItem {
     name: string;
@@ -7,7 +8,7 @@ interface SkillItem {
 
 interface SkillGroup {
     category: string;
-    icon: JSX.Element;
+    icon: ReactElement;
     items: SkillItem[];
 }
 

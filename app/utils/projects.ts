@@ -39,7 +39,7 @@ export const projects: Project[] = [
         description: "I just finished a Laravel-based Financial Management project, which helps users manage their income and expenses in a more structured and easy-to-understand way.",
         image: "/images/finance_app.png",
         tags: ["Laravel", "PHP", "MYSQL", "Tailwind CSS", "Chart"],
-        demoLink: "https://aldino-khalifah.web.id/",
+        demoLink: "https://finyouth.web.id/",
         githubLink: "https://github.com/Aldinokhalifah/Coba.php/tree/main/LARAVEL/Manajemen%20Keuangan/manajemen_keuangan",
     },
     {

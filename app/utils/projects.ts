@@ -50,4 +50,12 @@ export const projects: Project[] = [
         demoLink: "https://github.com/Aldinokhalifah/coba_Java/blob/main/Latihan2/inheritanceLatihan3.java",
         githubLink: "https://github.com/Aldinokhalifah/coba_Java/blob/main/Latihan2/inheritanceLatihan3.java",
     },
+    {
+        title: "Dictionary App",
+        description: "I just finished building a simple yet powerful Dictionary App using Next.js and the Free Dictionary API.This project helped me explore how to work with external APIs, handle client-side errors gracefully, and build a modular UI in a real-world React (Next.js) application.",
+        image: "https://placehold.co/500x200?text=No+Image",
+        tags: ["Next.js", "Tailwind CSS", "API"],
+        demoLink: "https://webku-taupe.vercel.app/",
+        githubLink: "https://github.com/Aldinokhalifah/webku/tree/main/dictionary-app",
+    },
 ]

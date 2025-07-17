@@ -58,4 +58,12 @@ export const projects: Project[] = [
         demoLink: "https://webku-taupe.vercel.app/",
         githubLink: "https://github.com/Aldinokhalifah/webku/tree/main/dictionary-app",
     },
+    {
+        title: "Crypto Tracker",
+        description: "Crypto Tracker is a fullstack web application that provides real-time cryptocurrency data and a currency converter with interactive historical price charts.The project was built to enhance my skills in integrating public APIs, optimizing data fetching with caching, and deploying production-ready web applications.",
+        image: "https://placehold.co/500x200?text=No+Image",
+        tags: ["React", "Tailwind CSS", "API", "Chart", "CryptoCurrency"],
+        demoLink: " https://crypto-cek.vercel.app/",
+        githubLink: "https://github.com/Aldinokhalifah/crypto-cek",
+    },
 ]

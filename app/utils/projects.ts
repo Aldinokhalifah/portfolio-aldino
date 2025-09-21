@@ -66,4 +66,12 @@ export const projects: Project[] = [
         demoLink: " https://crypto-cek.vercel.app/",
         githubLink: "https://github.com/Aldinokhalifah/crypto-cek",
     },
+    {
+        title: "Decentralized Voting System",
+        description: "I built a blockchain-based voting system using Solidity. This project was designed to make the voting process more transparent and secure",
+        image: "https://placehold.co/500x200?text=No+Image",
+        tags: ["Solidity", "Ethers.js", "Hardhat"],
+        demoLink: "https://github.com/Aldinokhalifah/coba_solidity/blob/main/Latihan%20Solidity%202/contracts/Voting.sol",
+        githubLink: "https://github.com/Aldinokhalifah/coba_solidity/blob/main/Latihan%20Solidity%202/contracts/Voting.sol",
+    },
 ]

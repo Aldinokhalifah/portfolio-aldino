@@ -43,14 +43,15 @@ export const skills: SkillGroup[] = [
             { name: "Python" },
             { name: "PHP" },
             { name: "Java" },
+            { name: "Solidity" },
         ],
     },
     {
         category: "Database",
         icon: <Database className="h-6 w-6" />,
         items: [
-            { name: "MySQL", level: "Advanced" },
-            { name: "MongoDB", level: "Advanced" },
+            { name: "MySQL"},
+            { name: "MongoDB"},
         ],
     },
 ]

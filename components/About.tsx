@@ -32,7 +32,7 @@ export default function About() {
                 <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Who I Am</h3>
                     <p className="text-muted-foreground text-pretty mb-4 text-white/40">
-                    I&apos;m Aldino Khalifah, a passionate Web Developer, Software Engineer, and Backend Developer with expertise in building modern,
+                    I&apos;m Aldino Khalifah, a passionate Fullstack Developer, Software Engineer, and Backend Developer with expertise in building modern,
                     responsive, and user-friendly web applications. With a strong foundation in both frontend and backend
                     technologies, I strive to create seamless digital experiences.
                     </p>
@@ -63,14 +63,14 @@ export default function About() {
                 <Card className="border border-white/10 bg-card/10 backdrop-blur-sm">
                 <CardContent className="p-6">
                     <h3 className="text-lg font-semibold mb-2">Experience</h3>
-                    <p className="text-muted-foreground text-white/40">{new Date().getFullYear() - 2023} years in web development</p>
+                    <p className="text-muted-foreground text-white/40">{new Date().getFullYear() - 2024} years in web development</p>
                 </CardContent>
                 </Card>
 
                 <Card className="border border-white/10 bg-card/10 backdrop-blur-sm">
                 <CardContent className="p-6">
                     <h3 className="text-lg font-semibold mb-2">Interests</h3>
-                    <p className="text-muted-foreground text-white/40">Web Development, Backend Systems, Software Engineering</p>
+                    <p className="text-muted-foreground text-white/40">Fullstack Development, Backend Systems, Software Engineering</p>
                 </CardContent>
                 </Card>
 

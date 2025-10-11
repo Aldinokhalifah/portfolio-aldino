@@ -1,12 +1,13 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/Card"
 import  Button  from "@/components/ui/Button"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import Swal from "sweetalert2"
+import emailjs from '@emailjs/browser';
 
 interface FormData {
     name: string
@@ -20,15 +21,18 @@ interface FormErrors {
 }
 
 export default function Contact() {
+    const NEXT_PUBLIC_EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const NEXT_PUBLIC_EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const NEXT_PUBLIC_EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    const form = useRef<HTMLFormElement>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [errors, setErrors] = useState<FormErrors>({})
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
         subject: "",
         message: "",
     })
-
-    const [isSubmitting, setIsSubmitting] = useState(false)
-    const [errors, setErrors] = useState<FormErrors>({})
 
     const validateForm = (): boolean => {
         const newErrors: FormErrors = {}
@@ -75,37 +79,32 @@ export default function Contact() {
         setIsSubmitting(true)
 
         try {
-            const res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: formData.name,
-                    email: formData.email,
-                    phone: formData.subject, // Using subject field as phone for API compatibility
-                    message: `Subject: \n\n${formData.message}`
-                }),
-            })
+            const result = await emailjs.sendForm(
+                `${NEXT_PUBLIC_EMAILJS_SERVICE_ID}`, // Replace with your EmailJS service ID
+                `${NEXT_PUBLIC_EMAILJS_TEMPLATE_ID}`, // Replace with your EmailJS template ID
+                form.current!,
+                `${NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}` // Replace with your EmailJS public key
+            );
 
-            const data = await res.json()
-
-            if (!res.ok) {
-                throw new Error(data.error || 'An error occurred')
+            if (result.text === 'OK') {
+                setFormData({ name: "", email: "", subject: "", message: "" })
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Message sent successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'Close'
+                })
+            } else {
+                throw new Error('Failed to send message')
             }
-
-            // Reset form
-            setFormData({ name: "", email: "", subject: "", message: "" })
-            Swal.fire({
-                title: 'Success!',
-                text: 'Message sent successfully!',
-                icon: 'success',
-                confirmButtonText: 'Close'
-            })
-            
         } catch (error) {
             console.error('Error sending message:', error)
-            alert('Failed to send message. Please try again.')
+            Swal.fire({
+                title: 'Error!',
+                text: 'Failed to send message. Please try again.',
+                icon: 'error',
+                confirmButtonText: 'Close'
+            })
         } finally {
             setIsSubmitting(false)
         }
@@ -187,84 +186,84 @@ export default function Contact() {
             >
                 <Card className="border border-white/15 bg-card/30 backdrop-blur-sm">
                 <CardContent className="p-6">
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2 flex flex-col">
-                        <label htmlFor="name" className="text-sm font-medium">
-                            Your Name
-                        </label>
-                        <input
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="John Doe"
-                            required
-                            className={`bg-background/50 border rounded-md p-2 border-white/10 ${errors.name ? 'border-red-500' : ''}`}
-                        />
-                        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                    <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-2 flex flex-col">
+                                <label htmlFor="name" className="text-sm font-medium">
+                                    Your Name
+                                </label>
+                                <input
+                                    id="name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder="John Doe"
+                                    required
+                                    className={`bg-background/50 border rounded-md p-2 border-white/10 ${errors.name ? 'border-red-500' : ''}`}
+                                />
+                                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                            </div>
+                            <div className="space-y-2 flex flex-col">
+                                <label htmlFor="email" className="text-sm font-medium">
+                                    Your Email
+                                </label>
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    placeholder="john@example.com"
+                                    required
+                                    className={`bg-background/50 border rounded-md p-2 border-white/10 ${errors.email ? 'border-red-500' : ''}`}
+                                />
+                                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                            </div>
                         </div>
+
                         <div className="space-y-2 flex flex-col">
-                        <label htmlFor="email" className="text-sm font-medium">
-                            Your Email
-                        </label>
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="john@example.com"
-                            required
-                            className={`bg-background/50 border rounded-md p-2 border-white/10 ${errors.email ? 'border-red-500' : ''}`}
-                        />
-                        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                            <label htmlFor="subject" className="text-sm font-medium">
+                                Subject
+                            </label>
+                            <input
+                                id="subject"
+                                name="subject"
+                                value={formData.subject}
+                                onChange={handleChange}
+                                placeholder="Project Inquiry"
+                                required
+                                className={`bg-background/50 border rounded-md p-2 border-white/10 ${errors.subject ? 'border-red-500' : ''}`}
+                            />
+                            {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
                         </div>
-                    </div>
 
-                    <div className="space-y-2 flex flex-col">
-                        <label htmlFor="subject" className="text-sm font-medium">
-                        Subject
-                        </label>
-                        <input
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        placeholder="Project Inquiry"
-                        required
-                        className={`bg-background/50 border rounded-md p-2 border-white/10 ${errors.subject ? 'border-red-500' : ''}`}
-                        />
-                        {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
-                    </div>
+                        <div className="space-y-2 flex flex-col">
+                            <label htmlFor="message" className="text-sm font-medium">
+                                Message
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                placeholder="Tell me about your project..."
+                                rows={5}
+                                required
+                                className={`bg-background/50 border rounded-md p-2 border-white/10 ${errors.message ? 'border-red-500' : ''}`}
+                            />
+                            {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+                        </div>
 
-                    <div className="space-y-2 flex flex-col">
-                        <label htmlFor="message" className="text-sm font-medium">
-                        Message
-                        </label>
-                        <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell me about your project..."
-                        rows={5}
-                        required
-                        className={`bg-background/50 border rounded-md p-2 border-white/10 ${errors.message ? 'border-red-500' : ''}`}
-                        />
-                        {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
-                    </div>
-
-                    <Button
-                        type="submit"
-                        variant="primary"
-                        size="md"
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                        disabled={isSubmitting}
-                    >
-                        <Send className="h-4 w-4 mr-2" />
-                        {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </Button>
+                        <Button
+                            type="submit"
+                            variant="primary"
+                            size="md"
+                            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                            disabled={isSubmitting}
+                        >
+                            <Send className="h-4 w-4 mr-2" />
+                            {isSubmitting ? 'Sending...' : 'Send Message'}
+                        </Button>
                     </form>
                 </CardContent>
                 </Card>

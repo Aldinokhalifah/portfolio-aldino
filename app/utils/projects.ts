@@ -21,7 +21,7 @@ export const projects: Project[] = [
     {
         title: "Crypto Tracker",
         description: "Fullstack app with real-time crypto data, currency converter, 7-day historical charts, and a caching system to optimize API usage. Deployed on Railway + Vercel.",
-        image: "/images/Crypto_Tracker.png",
+        image: "/images/crypto_tracker.png",
         tags: ["React", "Express.js", "Tailwind CSS", "API", "Chart"],
         demoLink: "https://crypto-cek.vercel.app/",
         githubLink: "https://github.com/Aldinokhalifah/crypto-cek",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     {
         title: "Dictionary App",
         description: "Clean dictionary app using Next.js and Free Dictionary API with audio pronunciation, part-of-speech breakdown, and graceful error handling in a modular component structure.",
-        image: "/images/Dictionary_App.png",
+        image: "/images/dictionary_app.png",
         tags: ["Next.js", "Tailwind CSS", "REST API"],
         demoLink: "https://webku-taupe.vercel.app/",
         githubLink: "https://github.com/Aldinokhalifah/webku/tree/main/dictionary-app",

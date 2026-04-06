@@ -10,6 +10,15 @@ interface Project {
 
 export const projects: Project[] = [
     {
+        title: "AssetFlow — Asset Management System",
+        description: "Fullstack MVP for company asset management built during internship at PT. Probesco Disatama. Features role-based access, dynamic forms, real-time dashboard with charts, audit logs, and multi-branch support.",
+        image: "",
+        tags: ["Next.js", "Express.js", "PostgreSQL", "TanStack Query", "Recharts", "Tailwind CSS"],
+        demoLink: "https://github.com/Aldinokhalifah",
+        githubLink: "https://github.com/Aldinokhalifah",
+        featured: true,
+    },
+    {
         title: "Financial Management App",
         description: "Laravel-based financial management with AI-powered consultation, income & expense tracking, data visualization, and interactive dashboard. Deployed with a live production domain.",
         image: "/images/finance_app.png",
@@ -25,7 +34,16 @@ export const projects: Project[] = [
         tags: ["React", "Express.js", "Tailwind CSS", "API", "Chart"],
         demoLink: "https://crypto-cek.vercel.app/",
         githubLink: "https://github.com/Aldinokhalifah/crypto-cek",
-        featured: true,
+        featured: false,
+    },
+    {
+        title: "Digital Subscription System",
+        description: "Java backend system simulating a full subscription business flow — plan management, invoice generation, payment processing, auto-renewal, and upgrade/downgrade with 68 test scenarios.",
+        image: "/images/subscription_system.png",
+        tags: ["Java", "OOP", "Layered Architecture", "Unit Testing"],
+        demoLink: "https://github.com/Aldinokhalifah/coba_Java/tree/main/Sistem_Subcription_Digital",
+        githubLink: "https://github.com/Aldinokhalifah/coba_Java/tree/main/Sistem_Subcription_Digital",
+        featured: false,
     },
     {
         title: "Notes App — Fullstack MERN",
@@ -46,30 +64,12 @@ export const projects: Project[] = [
         featured: false,
     },
     {
-        title: "Modern Car Sales Website",
-        description: "Interactive car sales platform with SendGrid email integration, WhatsApp API, detailed product pages, and fully responsive design built with Next.js 14.",
-        image: "/images/my_Cars.png",
-        tags: ["Next.js", "TypeScript", "SendGrid", "Tailwind CSS"],
-        demoLink: "https://my-cars-xgti.vercel.app/",
-        githubLink: "https://github.com/Aldinokhalifah/my-cars",
-        featured: false,
-    },
-    {
         title: "Collaborative Access",
         description: "Advanced Solidity smart contract with time-locked multi-approval access control, snapshot-based governance, role management (ADMIN/MEMBER), and defensive security invariants.",
-        image: "",
+        image: "/images/collaborative_access.png",
         tags: ["Solidity", "Hardhat", "Ethers.js", "Blockchain"],
         demoLink: "https://github.com/Aldinokhalifah/coba_solidity/blob/main/Latihan%20Solidity%203/contracts/CollaborativeAccess.sol",
         githubLink: "https://github.com/Aldinokhalifah/coba_solidity/blob/main/Latihan%20Solidity%203/contracts/CollaborativeAccess.sol",
-        featured: false,
-    },
-    {
-        title: "Dictionary App",
-        description: "Clean dictionary app using Next.js and Free Dictionary API with audio pronunciation, part-of-speech breakdown, and graceful error handling in a modular component structure.",
-        image: "/images/dictionary_app.png",
-        tags: ["Next.js", "Tailwind CSS", "REST API"],
-        demoLink: "https://webku-taupe.vercel.app/",
-        githubLink: "https://github.com/Aldinokhalifah/webku/tree/main/dictionary-app",
         featured: false,
     },
 ]

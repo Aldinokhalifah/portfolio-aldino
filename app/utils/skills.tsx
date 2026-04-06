@@ -51,6 +51,7 @@ export const skills: SkillGroup[] = [
         items: [
             { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
             { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+            { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql" },
             { name: "AWS", icon: "https://cdn.simpleicons.org/amazonwebservices/FF9900" },
         ],
     },
@@ -88,5 +89,10 @@ export const certifications = [
     { name: "Programming with Java", issuer: "Dicoding", year: "2025", color: "bg-green-50 text-green-700 border border-green-100" },
     { name: "Basic of AI", issuer: "Dicoding", year: "2024", color: "bg-green-50 text-green-700 border border-green-100" },
     { name: "Responsive Web Design", issuer: "FreeCodeCamp", year: "2024", color: "bg-orange-50 text-orange-700 border border-orange-100" },
-    { name: "Silver Medalist — English", issuer: "KSN 2025", year: "2025", color: "bg-yellow-50 text-yellow-700 border border-yellow-100" },
+    { name: "Al Fluency Framework & Foundations", issuer: "Anthropic", year: "2026", color: "bg-yellow-50 text-yellow-700 border border-yellow-100" },
+    { name: "Intermediate Java", issuer: "SoloLearn", year: "2026", color: "bg-pink-50 text-pink-700 border border-pink-100" },
+    { name: "Intermediate JavaScript", issuer: "SoloLearn", year: "2024", color: "bg-pink-50 text-pink-700 border border-pink-100" },
+    { name: "Intermediate Python", issuer: "SoloLearn", year: "2024", color: "bg-pink-50 text-pink-700 border border-pink-100" },
+    { name: "SEO with AI", issuer: "SoloLearn", year: "2026", color: "bg-pink-50 text-pink-700 border border-pink-100" },
+    { name: "Silver Medalist — English", issuer: "KSN 2025", year: "2025", color: "bg-gray-50 text-gray-700 border border-gray-100" },
 ]

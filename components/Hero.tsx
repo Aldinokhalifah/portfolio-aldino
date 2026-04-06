@@ -21,6 +21,7 @@ const techStack = [
     { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
     { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
     { name: "GIT", icon: "https://cdn.simpleicons.org/git/F1502F" },
+    { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql" },
 ]
 
 const socials = [
@@ -43,8 +44,8 @@ export default function Hero() {
             <motion.div {...fadeUp(0.1)} className="rounded-3xl overflow-hidden bg-[#E8E8E2] relative h-64">
                 <Image src="/images/logo.png" alt="Aldino Khalifah" fill className="object-cover object-top" />
                 <div className="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm rounded-2xl px-3 py-1.5 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-xs font-medium text-gray-700">Open to Work</span>
+                {/* <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs font-medium text-gray-700">Open to Work</span> */}
                 </div>
             </motion.div>
 
@@ -114,8 +115,8 @@ export default function Hero() {
             >
                 <Image src="/images/logo.png" alt="Aldino Khalifah" fill className="object-cover object-top" />
                 <div className="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm rounded-2xl px-3 py-1.5 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-xs font-medium text-gray-700">Open to Work</span>
+                {/* <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs font-medium text-gray-700">Open to Work</span> */}
                 </div>
             </motion.div>
 

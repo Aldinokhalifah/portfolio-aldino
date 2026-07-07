@@ -75,7 +75,7 @@ export default function About() {
                 <p className="text-white/60 text-sm leading-relaxed">
                 Beyond backend work, I think in fullstack taking complete ownership of solutions from database modeling
                 to deployment. I&apos;m passionate about integrating{" "}
-                <span className="text-white/80 font-medium">Generative AI (Gemini API)</span> to deliver high value functionality.
+                <span className="text-white/80 font-medium">Generative AI</span> to deliver high value functionality.
                 </p>
             </motion.div>
 
@@ -139,7 +139,7 @@ export default function About() {
                 <p className="text-white/60 text-sm leading-relaxed">
                     Beyond backend work, I think in fullstack taking complete ownership of solutions from database
                     modeling and optimization to deployment. I&apos;m also passionate about integrating modern technologies
-                    like <span className="text-white/80 font-medium">Generative AI (Gemini API)</span> to deliver
+                    like <span className="text-white/80 font-medium">Generative AI</span> to deliver
                     high value, real world functionality.
                 </p>
                 </div>

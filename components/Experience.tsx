@@ -90,15 +90,15 @@ export default function Experience() {
                                 <div className="md:col-span-4 flex flex-col gap-3">
 
                                     {/* Status card */}
-                                    <div className="rounded-3xl bg-[#D4E9C8] p-6 flex flex-col justify-between flex-1">
-                                        <p className="text-xs uppercase tracking-[0.2em] text-[#3a6b2a]/50 font-medium">Current Status</p>
+                                    <div className="rounded-3xl bg-gray-400 p-6 flex flex-col justify-between flex-1">
+                                        <p className="text-xs uppercase tracking-[0.2em] text-gray-200 font-medium">Previous Status</p>
                                         <div className="mt-4">
                                             <div className="flex items-center gap-2 mb-3">
-                                                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                                                <span className="text-[#2d5220] font-bold text-sm">Actively Working</span>
+                                                <span className="w-2.5 h-2.5 rounded-full bg-gray-200" />
+                                                <span className="text-gray-600 font-bold text-sm">Previously Worked</span>
                                             </div>
-                                            <p className="text-[#2d5220]/60 text-xs leading-relaxed">
-                                                Currently on-site at PT. Probesco Disatama, Jakarta Pusat — building AssetFlow from the ground up.
+                                            <p className="text-gray-600 text-xs leading-relaxed">
+                                                Previously worked at PT. Probesco Disatama, Jakarta Pusat — built a fullstack meeting management application with AI integration from the ground up.
                                             </p>
                                         </div>
                                     </div>
@@ -108,18 +108,18 @@ export default function Experience() {
                                         <p className="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium">Highlights</p>
                                         <div className="flex flex-col gap-3">
                                             <div>
-                                                <p className="text-2xl font-bold text-[#1A1A1A]">30+</p>
+                                                <p className="text-2xl font-bold text-[#1A1A1A]">50+</p>
                                                 <p className="text-gray-500 text-xs">REST API Endpoints Built</p>
                                             </div>
                                             <div className="w-full h-px bg-gray-100" />
                                             <div>
-                                                <p className="text-2xl font-bold text-[#1A1A1A]">10+</p>
-                                                <p className="text-gray-500 text-xs">Pages & Features Developed</p>
+                                                <p className="text-2xl font-bold text-[#1A1A1A]">15+</p>
+                                                <p className="text-gray-500 text-xs">AI Agent Tools Implemented</p>
                                             </div>
                                             <div className="w-full h-px bg-gray-100" />
                                             <div>
-                                                <p className="text-2xl font-bold text-[#1A1A1A]">Full</p>
-                                                <p className="text-gray-500 text-xs">Stack Ownership (FE + BE)</p>
+                                                <p className="text-2xl font-bold text-[#1A1A1A]">3</p>
+                                                <p className="text-gray-500 text-xs">Services (FE + BE + AI Agent)</p>
                                             </div>
                                         </div>
                                     </div>

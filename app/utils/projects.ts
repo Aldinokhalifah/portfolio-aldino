@@ -10,9 +10,18 @@ interface Project {
 
 export const projects: Project[] = [
     {
-        title: "AssetFlow — Asset Management System",
+        title: "Event Ticketing System Full Stack + AI Agent",
+        description: "Full-stack event ticketing platform with Spring Boot REST API, Next.js frontend, and a Python MCP AI agent. Built with pessimistic locking to prevent overselling, two-layer rate limiting (IP + UUID), JPQL sales reporting, and a tool-calling AI agent with per-request JWT injection no token stored server-side.",
+        image: "/images/event_ticketing.png",
+        tags: ["Spring Boot", "Java", "Next.js", "TypeScript", "PostgreSQL", "Python", "FastAPI", "MCP", "TanStack Query"],
+        demoLink: "https://github.com/Aldinokhalifah/event-ticketing",
+        githubLink: "https://github.com/Aldinokhalifah/event-ticketing",
+        featured: true,
+    },
+    {
+        title: "AssetFlow Asset Management System",
         description: "Fullstack MVP for company asset management built during internship at PT. Probesco Disatama. Features role-based access, dynamic forms, real-time dashboard with charts, audit logs, and multi-branch support.",
-        image: "",
+        image: "/images/assetflow.png",
         tags: ["Next.js", "Express.js", "PostgreSQL", "TanStack Query", "Recharts", "Tailwind CSS"],
         demoLink: "https://github.com/Aldinokhalifah",
         githubLink: "https://github.com/Aldinokhalifah",
@@ -25,7 +34,7 @@ export const projects: Project[] = [
         tags: ["Laravel", "PHP", "MySQL", "Tailwind CSS", "AI"],
         demoLink: "https://finyouth.web.id/",
         githubLink: "https://github.com/Aldinokhalifah/Ginger-Majesty",
-        featured: true,
+        featured: false,
     },
     {
         title: "Crypto Tracker",
@@ -52,15 +61,6 @@ export const projects: Project[] = [
         tags: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
         demoLink: "https://notes-app-pi-cyan.vercel.app/",
         githubLink: "https://github.com/Aldinokhalifah/notes_app",
-        featured: false,
-    },
-    {
-        title: "Simple AI Chatbot",
-        description: "Conversational AI chatbot powered by Gemini API, built with Next.js and TypeScript. Delivers real-time, context-aware responses with a clean and intuitive UI.",
-        image: "/images/ai_chatbot.png",
-        tags: ["Next.js", "TypeScript", "Gemini API", "Tailwind CSS"],
-        demoLink: "https://ai-web-app-beta.vercel.app/",
-        githubLink: "https://github.com/Aldinokhalifah/ai-web-app",
         featured: false,
     },
     {

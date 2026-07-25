@@ -51,7 +51,7 @@ export default function Hero() {
 
             {/* Name & Tagline */}
             <motion.div {...fadeUp(0.2)} className="rounded-3xl bg-[#1A1A1A] text-white p-6 flex flex-col gap-3">
-                <p className="text-xs tracking-[0.2em] uppercase text-white/40 font-medium">Software Engineer | Fullstack Developer</p>
+                <p className="text-xs tracking-[0.2em] uppercase text-white/40 font-medium">Software Engineer | Fullstack Developer | Backend Developer</p>
                 <h1 className="text-3xl font-bold tracking-tight leading-tight">Aldino Khalifah</h1>
                 <p className="text-white/50 text-sm leading-relaxed">
                 Building scalable web solutions from architecture to experience.
@@ -125,7 +125,7 @@ export default function Hero() {
                 {...fadeUp(0.2)}
                 className="col-span-8 rounded-3xl bg-[#1A1A1A] text-white p-8 flex flex-col justify-between min-h-[160px]"
             >
-                <p className="text-xs tracking-[0.2em] uppercase text-white/40 font-medium">Software Engineer | Fullstack Developer</p>
+                <p className="text-xs tracking-[0.2em] uppercase text-white/40 font-medium">Software Engineer | Fullstack Developer | Backend Developer</p>
                 <div>
                 <h1 className="text-5xl font-bold tracking-tight leading-none mb-2">Aldino Khalifah</h1>
                 <p className="text-white/50 text-base max-w-md leading-relaxed">

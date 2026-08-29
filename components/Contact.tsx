@@ -4,8 +4,8 @@ import type React from "react"
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram, Twitter } from "lucide-react"
-import Swal from "sweetalert2"
 import emailjs from '@emailjs/browser'
+import toast, { Toaster } from "react-hot-toast"
 
 interface FormData {
     name: string
@@ -22,7 +22,7 @@ const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 24 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] as const },
 })
 
 const contactInfo = [
@@ -97,13 +97,13 @@ export default function Contact() {
             )
             if (result.text === "OK") {
                 setFormData({ name: "", email: "", subject: "", message: "" })
-                Swal.fire({ title: "Success!", text: "Message sent successfully!", icon: "success", confirmButtonText: "Close" })
+                toast.success("Message sent successfully!")
             } else {
                 throw new Error("Failed to send message")
             }
         } catch (error) {
             console.error("Error sending message:", error)
-            Swal.fire({ title: "Error!", text: "Failed to send message. Please try again.", icon: "error", confirmButtonText: "Close" })
+            toast.error("Failed to send message. Please try again.")
         } finally {
             setIsSubmitting(false)
         }
@@ -117,7 +117,7 @@ export default function Contact() {
     return (
         <section id="contact" className="py-20 bg-[#F5F5F0] px-4">
             <div className="max-w-5xl mx-auto">
-
+                <Toaster position="top-right"/>
                 {/* Section Header */}
                 <motion.p {...fadeUp(0)} className="text-xs uppercase tracking-[0.25em] text-gray-400 font-medium mb-2">
                     Contact

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio Aldino",
-  description: "",
+  title: "Portfolio Aldino Khalifah",
+  description: "Portfolio website of Aldino Khalifah, showcasing projects, skills, and contact information.",
   icons: {
     icon: "/images/logo.ico",
   },

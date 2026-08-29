@@ -72,4 +72,13 @@ export const projects: Project[] = [
         githubLink: "https://github.com/Aldinokhalifah/coba_solidity/blob/main/Latihan%20Solidity%203/contracts/CollaborativeAccess.sol",
         featured: false,
     },
+    {
+        title: "Wallet System Smart Contract",
+        description: "Solidity smart contract simulating a digital wallet with approval-based withdrawals. Features user registration, Ether top-up, request lifecycle states (requested → approved → processed), role-based access control, and event-driven design for blockchain explorer integration.",
+        image: "/images/wallet_system.png",
+        tags: ["Solidity", "Smart Contracts", "Blockchain", "RBAC"],
+        demoLink: "https://github.com/Aldinokhalifah/coba_solidity/blob/main/Latihan%20Solidity%202/contracts/WalletSystem.sol",
+        githubLink: "https://github.com/Aldinokhalifah/coba_solidity/blob/main/Latihan%20Solidity%202/contracts/WalletSystem.sol",
+        featured: false,
+    },
 ]

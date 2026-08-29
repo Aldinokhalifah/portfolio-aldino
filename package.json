@@ -13,10 +13,11 @@
     "@sendgrid/mail": "^8.1.5",
     "framer-motion": "^12.12.1",
     "lucide-react": "^0.511.0",
-    "next": "15.3.8",
+    "next": "^15.5.24",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sweetalert2": "^11.21.2"
+    "react-hot-toast": "^2.6.0",
+    "sharp": "^0.35.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -25,7 +26,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.3.2",
+    "eslint-config-next": "^15.5.24",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -60,6 +60,7 @@ export default function Contact() {
     const form = useRef<HTMLFormElement>(null)
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [errors, setErrors] = useState<FormErrors>({})
+    const [lastSubmitted, setLastSubmitted] = useState<number>(0)
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -84,10 +85,33 @@ export default function Contact() {
         if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }))
     }
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+
+        // Rate limiting: minimum 5 seconds between submissions
+        const now = Date.now()
+        const timeSinceLastSubmit = now - lastSubmitted
+        const MIN_SUBMIT_INTERVAL = 5000 // 5 seconds
+
+        if (timeSinceLastSubmit < MIN_SUBMIT_INTERVAL) {
+            const remainingTime = Math.ceil((MIN_SUBMIT_INTERVAL - timeSinceLastSubmit) / 1000)
+            toast.error(`Please wait ${remainingTime} seconds before sending another message.`)
+            return
+        }
+
+        // Check honeypot field - prevents spam bots but not spam humans
+        const honeypot = e.currentTarget.elements.namedItem("honeypot")
+        if (honeypot instanceof HTMLTextAreaElement && honeypot.value.trim()) {
+            console.log("Harvest attempt blocked by honeypot")
+            return
+        }
+
         if (!validateForm()) return
+
         setIsSubmitting(true)
+        const submissionTime = Date.now()
+        setLastSubmitted(submissionTime)
+
         try {
             const result = await emailjs.sendForm(
                 `${NEXT_PUBLIC_EMAILJS_SERVICE_ID}`,
@@ -165,6 +189,8 @@ export default function Contact() {
                     <motion.div {...fadeUp(0.45)} className="rounded-3xl bg-white border border-gray-100 p-6">
                         <p className="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-5">Send a Message</p>
                         <form ref={form} onSubmit={handleSubmit} className="space-y-3">
+                            <textarea name="honeypot" aria-hidden="true" tabIndex={-1} autoComplete="off"
+                                style={{ position: 'absolute', left: '-9999px' }} rows={1} />
                             <div>
                                 <input name="name" value={formData.name} onChange={handleChange}
                                     placeholder="Your Name" className={inputClass("name")} />
@@ -238,6 +264,8 @@ export default function Contact() {
                     <motion.div {...fadeUp(0.2)} className="col-span-8 rounded-3xl bg-white border border-gray-100 p-8">
                         <p className="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-6">Send a Message</p>
                         <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+                            <textarea name="honeypot" aria-hidden="true" tabIndex={-1} autoComplete="off"
+                                style={{ position: 'absolute', left: '-9999px' }} rows={1} />
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <input name="name" value={formData.name} onChange={handleChange}
